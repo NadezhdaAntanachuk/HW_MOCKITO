@@ -47,4 +47,30 @@ public class MovieManagerTest {
         String[] actual = manager.findLast();
 
     }
+
+    @Test
+    public void testFindLast3WithLimit5() {
+        MovieManager manager = new MovieManager(5);
+
+        manager.addMovie("Бладшот");
+        manager.addMovie("Вперед");
+        manager.addMovie("Джентельмены");
+
+        String[] expected = {"Джентельмены", "Вперед", "Бладшот"};
+        String[] actual = manager.findLast();
+
+    }
+
+    @Test
+    public void testFindLast3WithLimit3() {
+        MovieManager manager = new MovieManager(3);
+
+        manager.addMovie("Бладшот");
+        manager.addMovie("Вперед");
+        manager.addMovie("Джентельмены");
+
+        String[] expected = {"Джентельмены", "Вперед", "Бладшот"};
+        String[] actual = manager.findLast();
+
+    }
 }
