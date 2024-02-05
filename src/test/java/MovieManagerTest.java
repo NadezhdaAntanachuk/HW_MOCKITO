@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class MovieManagerTest {
@@ -8,6 +9,7 @@ public class MovieManagerTest {
 
         String[] expected = {};
         String[] actual = manager.findAll();
+        Assertions.assertArrayEquals(expected, actual);
 
     }
 
@@ -19,7 +21,7 @@ public class MovieManagerTest {
 
         String[] expected = {"Бладшот"};
         String[] actual = manager.findAll();
-
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -32,7 +34,7 @@ public class MovieManagerTest {
 
         String[] expected = {"Бладшот", "Вперед", "Джентельмены"};
         String[] actual = manager.findAll();
-
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -45,7 +47,7 @@ public class MovieManagerTest {
 
         String[] expected = {"Джентельмены", "Вперед", "Бладшот"};
         String[] actual = manager.findLast();
-
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -59,7 +61,7 @@ public class MovieManagerTest {
 
         String[] expected = {"Джентельмены", "Вперед", "Бладшот"};
         String[] actual = manager.findLast();
-
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -73,7 +75,7 @@ public class MovieManagerTest {
 
         String[] expected = {"Джентельмены", "Вперед", "Бладшот"};
         String[] actual = manager.findLast();
-
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -85,8 +87,8 @@ public class MovieManagerTest {
         manager.addMovie("Вперед");
         manager.addMovie("Джентельмены");
 
-        String[] expected = {"Джентельмены", "Вперед", "Бладшот"};
+        String[] expected = {"Джентельмены", "Вперед"};
         String[] actual = manager.findLast();
-
+        Assertions.assertArrayEquals(expected, actual);
     }
 }
